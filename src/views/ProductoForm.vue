@@ -92,7 +92,7 @@ export default {
     submitForm() {
       axios
         .post(
-          "http://localhost:9090/productos",this.formdatasend(),{
+          "https://apispring.uc.r.appspot.com/productos",this.formdatasend(),{
             headers: {
             'Content-Type': 'application/json'
             }
@@ -100,7 +100,7 @@ export default {
         )
         .then(() => {
           //Perform Success Action
-          alert("producto Agregado")
+          window.location.reload();
         })
         .catch((e) => {
           // error.response.status Check status code
@@ -126,7 +126,7 @@ export default {
   },
 
   mounted: function () {
-    axios.get("http://localhost:9090/presentacion/").then((data) => {
+    axios.get("https://apispring.uc.r.appspot.com/presentacion").then((data) => {
       this.presentaciones = data.data;
       console.log(data.data);
     });

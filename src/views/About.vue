@@ -53,7 +53,7 @@ export default {
   methods: {
     deleteContact: function (id) {
       axios
-        .delete("http://localhost:9090/presentacion/" + id)
+        .delete("https://apispring.uc.r.appspot.com/presentacion/" + id)
         .then(() => {
           window.location.reload();
         })
@@ -73,7 +73,7 @@ export default {
   },
 
   mounted: function () {
-    axios.get("http://localhost:9090/presentacion/").then((data) => {
+    axios.get("https://apispring.uc.r.appspot.com/presentacion").then((data) => {
       this.results = data.data;
       console.log(data.data);
     });

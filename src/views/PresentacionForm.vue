@@ -49,14 +49,14 @@ export default {
     },
     submitForm() {
       axios
-        .post("http://localhost:9090/presentacion", this.formdatasend(), {
+        .post("https://apispring.uc.r.appspot.com/presentacion", this.formdatasend(), {
           headers: {
             "Accept": "application/json",
           },
         })
         .then(() => {
           //Perform Success Action
-          alert("producto Agregado");
+          window.location.reload();
         })
         .catch((e) => {
           // error.response.status Check status code

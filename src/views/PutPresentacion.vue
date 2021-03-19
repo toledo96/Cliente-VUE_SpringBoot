@@ -48,7 +48,7 @@ export default {
     },
     submitForm() {
       axios
-        .put("http://localhost:9090/presentacion/" + this.$route.params.id , this.formdatasend(), {
+        .put("https://apispring.uc.r.appspot.com/presentacion/" + this.$route.params.id , this.formdatasend(), {
           headers: {
             Accept: "application/json",
           },
@@ -79,7 +79,7 @@ export default {
 
   mounted: function () {
     axios
-      .get("http://localhost:9090/presentacion/" + this.$route.params.id)
+      .get("https://apispring.uc.r.appspot.com/presentacion/" + this.$route.params.id)
       .then((data) => {
         this.results = data.data;
         console.log(data.data);

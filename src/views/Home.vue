@@ -58,7 +58,7 @@ export default {
   methods: {
     deleteContact: function (id) {
       axios
-        .delete("http://localhost:9090/productos/" + id)
+        .delete("https://apispring.uc.r.appspot.com/productos/" + id)
         .then(() => {
           window.location.reload();
         })
@@ -78,7 +78,7 @@ export default {
   },
 
   mounted: function () {
-    axios.get("http://localhost:9090/productos/").then((data) => {
+    axios.get("https://apispring.uc.r.appspot.com/productos").then((data) => {
       this.results = data.data;
       console.log(data.data);
     });

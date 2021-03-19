@@ -90,7 +90,7 @@ export default {
     },
     submitForm() {
       axios
-        .put("http://localhost:9090/productos/" + this.$route.params.id, this.formdatasend(), {
+        .put("https://apispring.uc.r.appspot.com/productos/" + this.$route.params.id, this.formdatasend(), {
           headers: {
             "Content-Type": "application/json",
           },
@@ -124,14 +124,14 @@ export default {
   },
 
   mounted: function () {
-    axios.get("http://localhost:9090/presentacion/").then((data) => {
+    axios.get("https://apispring.uc.r.appspot.com/presentacion/").then((data) => {
       this.presentaciones = data.data;
       console.log(data.data);
     });
 
     axios
       .get(
-        "http://localhost:9090/productos/" +
+        "https://apispring.uc.r.appspot.com/productos/" +
           this.$route.params.id 
       )
       .then((data) => {
